@@ -1,0 +1,71 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+
+<div class="container">
+  <!-- Mensajes Flash -->
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <div class="flash-message">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  <header class="header">
+    <img src="../static/logo_TB_positivo-01.jpg" alt="Logo" class="logo">
+    <h1 class="main-title">Configura tu servicio</h1>
+  </header>
+  
+  
+  <form id="serviceForm" method="post">
+    <input type="text" name="username" placeholder="Tu nombre" required><br>
+    <!-- Dentro de tu <form> en el archivo index.html -->
+    <div class="service-option">
+       <div class="description">
+          <div class="title">Opción 1</div>
+          <div class="detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+      </div>
+      <div class="selection">
+          <input type="checkbox" name="service" value="50" id="option1">
+          <label for="option1" class="price-tag">50€</label>
+      </div>
+   </div>
+
+   <div class="service-option">
+    <div class="description">
+       <div class="title">Opción 2</div>
+       <div class="detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+   </div>
+   <div class="selection">
+       <input type="checkbox" name="service" value="20" id="option1">
+       <label for="option1" class="price-tag">20€</label>
+   </div>
+</div>
+
+    <div class="total">
+      <span class="total-label">Gran Total</span>
+      <span class="total-amount" id="totalSum">0€</span>
+      <input type="hidden" name="total" id="totalInput">
+
+    </div>
+    <div class="button-container">
+      <button type="submit">Guardar</button>
+   </div>
+  </form>
+  <!-- Otros elementos de tu formulario -->
+
+
+
+
+</div>
+
+</body>
+</html>
