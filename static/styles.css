@@ -62,14 +62,14 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 5px;
     background-color: white; /* Asumiendo que quieres un fondo blanco */
     border-bottom: 2px solid black; /* Línea negra debajo de la cabecera */
 
   }
   
   .logo {
-    height: 80px; /* Ajusta esto según el tamaño de tu logo */
+    height: 60px; /* Ajusta esto según el tamaño de tu logo */
     width: auto; /* Mantiene la proporción del logo */
 
   }
@@ -104,7 +104,7 @@ body {
   
   .title {
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1em;
     color: rgb(239, 51, 64); /* Si quieres el título en el mismo rojo */
   }
   
